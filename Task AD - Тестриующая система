@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int systemAns = scanner.nextInt();
+        int studentAns = scanner.nextInt();
+        
+        if ((systemAns == 1 && studentAns == 1) || (systemAns != 1 && studentAns != 1)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+}
