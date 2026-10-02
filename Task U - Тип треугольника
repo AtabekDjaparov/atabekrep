@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long[] s = new long[3];
+        s[0] = scanner.nextLong();
+        s[1] = scanner.nextLong();
+        s[2] = scanner.nextLong();
+        
+        Arrays.sort(s);
+        
+        if (s[0] + s[1] <= s[2]) {
+            System.out.println("impossible");
+        } else if (s[0] * s[0] + s[1] * s[1] == s[2] * s[2]) {
+            System.out.println("right");
+        } else if (s[0] * s[0] + s[1] * s[1] > s[2] * s[2]) {
+            System.out.println("acute");
+        } else {
+            System.out.println("obtuse");
+        }
+    }
+}
