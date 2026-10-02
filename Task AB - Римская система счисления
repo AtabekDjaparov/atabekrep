@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        
+        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"};
+        String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        
+        System.out.println(tens[x / 10] + units[x % 10]);
+    }
+}
