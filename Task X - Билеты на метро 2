@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        
+        int n60 = n / 60;
+        int rem = n % 60;
+        
+        int bestCost = Integer.MAX_VALUE;
+        int bestTrips = 0;
+        int b1 = 0, b5 = 0, b10 = 0, b20 = 0, b60 = 0;
+        
+        for (int i60 = 0; i60 <= 1; i60++) {
+            for (int i20 = 0; i20 <= 3; i20++) {
+                for (int i10 = 0; i10 <= 2; i10++) {
+                    for (int i5 = 0; i5 <= 2; i5++) {
+                        for (int i1 = 0; i1 <= 5; i1++) {
+                            int trips = i60 * 60 + i20 * 20 + i10 * 10 + i5 * 5 + i1;
+                            if (trips >= rem) {
+                                int cost = i60 * 440 + i20 * 230 + i10 * 125 + i5 * 70 + i1 * 15;
+                                if (cost < bestCost || (cost == bestCost && trips > bestTrips)) {
+                                    bestCost = cost;
+                                    bestTrips = trips;
+                                    b1 = i1;
+                                    b5 = i5;
+                                    b10 = i10;
+                                    b20 = i20;
+                                    b60 = i60;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        System.out.println(b1 + " " + b5 + " " + b10 + " " + b20 + " " + (n60 + b60));
+    }
+}
