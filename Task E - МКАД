@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+
+        int v = console.nextInt();
+        int t = console.nextInt();
+
+        int position = (v * t) % 109;
+
+        if (position < 0) {
+            position += 109;
+        }
+
+        System.out.println(position);
+    }
+}
