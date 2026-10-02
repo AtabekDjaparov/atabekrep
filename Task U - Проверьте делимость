@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        
+        // Вычисляем остатки от деления друг на друга
+        int rem1 = n % m;
+        int rem2 = m % n;
+        
+        // Вычисляем результат
+        int result = rem1 * rem2 + 1;
+        
+        System.out.println(result);
+    }
+}
